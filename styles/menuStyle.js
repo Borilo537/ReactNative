@@ -50,7 +50,6 @@ export const styles = StyleSheet.create({
     borderTopWidth: 2,
     borderBottomWidth: 2,
     borderColor: normalGreen
-
   },
 
   line: {

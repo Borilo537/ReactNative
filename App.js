@@ -5,7 +5,8 @@ import { styles } from './styles/appStyle';
 
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
-import Menu from './Menu'; // Importa o componente Menu
+import Menu from './Menu'; 
+import Limit from './Limit'; 
 
 const Stack = createStackNavigator();
 
@@ -17,6 +18,7 @@ export default function App() {
       <Stack.Navigator initialRouteName="Home">
         <Stack.Screen name="Home" component={HomeScreen} options={{ headerShown: false }}/>
         <Stack.Screen name="Menu" component={Menu} options={{ headerShown: false }}/>
+        <Stack.Screen name="Limit" component={Limit} options={{ headerShown: false }}/>
       </Stack.Navigator>
     </NavigationContainer>
   );
@@ -29,6 +31,10 @@ function HomeScreen({ navigation }) {
 
   const menuPress = () => {
     navigation.navigate('Menu');
+  };
+
+  const limitPress = () => {
+    navigation.navigate('Limit');
   };
 
   const handlePress = () => {
@@ -57,7 +63,7 @@ function HomeScreen({ navigation }) {
               <Text style={styles.gastoText}>gasto na semana</Text>
 
               <View style={styles.gastoContainer}>
-                <TouchableOpacity onPress={handlePress}>
+                <TouchableOpacity onPress={limitPress}>
                   <Text style={styles.gastoNum}>R$ 0,00</Text>
                 </TouchableOpacity>
                 <TouchableOpacity onPress={handlePress}>
