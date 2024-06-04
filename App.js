@@ -7,6 +7,7 @@ import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 
 import Login from './Login';
+import Register from './Register';
 import Menu from './Menu';
 import Limit from './Limit';
 import EditLimit from './EditLimit';
@@ -18,8 +19,9 @@ const Stack = createStackNavigator();
 export default function Home() {
   return (
     <NavigationContainer>
-      <Stack.Navigator initialRouteName="Login">
+      <Stack.Navigator initialRouteName="Register">
         <Stack.Screen name="Login" component={Login} options={{ headerShown: false }} />
+        <Stack.Screen name="Register" component={Register} options={{ headerShown: false }} />
         <Stack.Screen name="Home" component={HomeScreen} options={{ headerShown: false }} />
         <Stack.Screen name="Menu" component={Menu} options={{ headerShown: false }} />
         <Stack.Screen name="Limit" component={Limit} options={{ headerShown: false }} />
@@ -33,8 +35,8 @@ export default function Home() {
 
 function HomeScreen({ navigation }) {
 
-  const loginPress = () => {
-    navigation.navigate('Login');
+  const registerPress = () => {
+    navigation.navigate('Register');
   };
 
   const menuPress = () => {
@@ -63,7 +65,7 @@ function HomeScreen({ navigation }) {
             <TouchableOpacity onPress={menuPress}>
               <ImageBackground source={require('./assets/menu.png')} style={styles.menu}></ImageBackground>
             </TouchableOpacity>
-            <TouchableOpacity onPress={loginPress}>
+            <TouchableOpacity onPress={registerPress}>
               <ImageBackground source={require('./assets/profile.png')} style={styles.profile}></ImageBackground>
             </TouchableOpacity>
           </View>

@@ -1,8 +1,8 @@
 import { StyleSheet } from 'react-native';
 
 const lightGreen = '#009443';
-const lightYellow = '#945e00';
 const normalGreen = '#2b3b29';
+const darkerGreen = '#182117';
 const darkGreen = '#11170F';
 
 export const styles = StyleSheet.create({
@@ -350,6 +350,8 @@ export const styles = StyleSheet.create({
     alignItems: 'center',
     textAlign: 'center',
   },
+
+  
 
   
 

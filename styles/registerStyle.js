@@ -67,7 +67,7 @@ export const styles = StyleSheet.create({
   form: {
     paddingHorizontal: 35,
     paddingVertical: 40,
-    gap: 20,
+    gap: 18,
     display: 'flex',
     alignItems: 'center',
     flexDirection: 'column',  
@@ -75,7 +75,7 @@ export const styles = StyleSheet.create({
   },
 
   input: {
-    gap: 15,
+    gap: 12,
     width: '100%',
   },
 
@@ -96,7 +96,7 @@ export const styles = StyleSheet.create({
   },
 
   btn: {
-    marginTop: 40,
+    marginTop: 35,
     backgroundColor: lightGreen,
     width: 150,
     padding: 15,
@@ -110,10 +110,19 @@ export const styles = StyleSheet.create({
     fontSize: 20,
     fontWeight: 500,
     color: 'white',
+  },
+
+
+  changeLogin: {
+
+    color: 'white',
+    textDecorationLine: 'underline',
+    fontSize: 18,
+    marginTop: 10,
+    padding: 10,
+    borderRadius: 10,
+    marginBottom: 30,
   }
-
-
-
 
 
  

@@ -156,6 +156,7 @@ export const styles = StyleSheet.create({
   gastou: {
     color: 'white',
     fontSize: 40,
+    fontWeight: 600,
   },
 
   analiseContainer: {

@@ -1,13 +1,14 @@
 import { StatusBar } from 'expo-status-bar';
 import React from 'react';
 import { Text, View, Image, TouchableOpacity, ImageBackground, ScrollView } from 'react-native';
-import { styles } from './styles/loginStyle.js';
+import { styles } from './styles/registerStyle.js';
 import { TextInput } from 'react-native-web';
 
 export default function MenuScreen({ navigation }) {
   const homePress = () => {
     navigation.navigate('Home');
   };
+
 
   const handlePress = () => {
     Linking.openURL('https://exemplo.com');
@@ -30,6 +31,13 @@ export default function MenuScreen({ navigation }) {
         </View>
 
         <View style={styles.form}>
+          <View style={styles.input}>
+            <Text style={styles.inputLabel}>Nome</Text>
+
+            <TextInput style={styles.inputControl} placeholder='Seu Nome'>
+            </TextInput>
+
+          </View>
 
           <View style={styles.input}>
             <Text style={styles.inputLabel}>Email</Text>
@@ -42,7 +50,15 @@ export default function MenuScreen({ navigation }) {
           <View style={styles.input}>
             <Text style={styles.inputLabel}>Senha</Text>
 
-            <TextInput style={styles.inputControl} placeholder='Digite sua senha'>
+            <TextInput style={styles.inputControl} placeholder='Crie sua senha'>
+            </TextInput>
+
+          </View>
+
+          <View style={styles.input}>
+            <Text style={styles.inputLabel}>Confirmar Senha</Text>
+
+            <TextInput style={styles.inputControl} placeholder='Confirme sua senha'>
             </TextInput>
 
           </View>
@@ -50,16 +66,19 @@ export default function MenuScreen({ navigation }) {
           <View style={styles.formAction}>
             <TouchableOpacity>
               <View style={styles.btn}>
-                <Text style={styles.btnText}>Entrar</Text>
+                <Text style={styles.btnText}>Criar Conta</Text>
               </View>
             </TouchableOpacity>
           </View>
 
-
+          <TouchableOpacity>
+            <Text style={styles.changeLogin}>Já possuo uma conta</Text>
+          </TouchableOpacity>
+          
         </View>
 
-        
-      
+
+
 
 
         <StatusBar style="light" />
