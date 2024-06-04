@@ -8,6 +8,10 @@ export default function MenuScreen({ navigation }) {
     navigation.navigate('Home');
   };
 
+  const editPress = () => {
+    navigation.navigate('EditLimit');
+};
+
   const handlePress = () => {
     Linking.openURL('https://exemplo.com');
   };
@@ -30,21 +34,21 @@ export default function MenuScreen({ navigation }) {
             </TouchableOpacity>
           </View>
 
-          <TouchableOpacity onPress={handlePress}>
-          <View style={styles.limitTextContainer}>
+          <TouchableOpacity onPress={editPress}>
+            <View style={styles.limitTextContainer}>
               <Text style={styles.limitText}>Seu Limite</Text>
               <ImageBackground source={require('./assets/pen.png')} style={styles.edit}></ImageBackground>
-          </View>
+            </View>
           </TouchableOpacity>
 
           <View style={styles.limitValueContainer}>
-              <Text style={styles.limitValueLabel}>R$</Text>
-              <Text style={styles.limitValue}>720</Text>
-              <Text style={styles.limitValueLabel}>,00</Text>
+            <Text style={styles.limitValueLabel}>R$</Text>
+            <Text style={styles.limitValue}>720</Text>
+            <Text style={styles.limitValueLabel}>,00</Text>
           </View>
 
           <View style={styles.limitTypeContainer}>
-              <Text style={styles.limitType}>Semanais</Text>
+            <Text style={styles.limitType}>Semanais</Text>
           </View>
 
           <View style={styles.main}>
@@ -52,7 +56,17 @@ export default function MenuScreen({ navigation }) {
               <Text style={styles.gastouLabel}>Gasto atual</Text>
               <Text style={styles.gastou}>R$ 67,05</Text>
             </View>
+            <TouchableOpacity onPress={handlePress}>
+              <View style={styles.analiseContainer}>
+                <Text style={styles.analiseLabel}>Análise</Text>
+                <ImageBackground source={require('./assets/arrow.png')} style={styles.analiseArrow}></ImageBackground>
+              </View>
+            </TouchableOpacity>
           </View>
+
+
+
+
 
         </View>
 

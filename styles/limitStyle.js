@@ -1,4 +1,4 @@
-import { LayoutAnimation, StyleSheet } from 'react-native';
+import {  StyleSheet } from 'react-native';
 
 
 const lightGreen = '#009443';
@@ -140,7 +140,7 @@ export const styles = StyleSheet.create({
   gastouContainer: {
     backgroundColor: darkerGreen,
     width: '100%',
-    height: 180,
+    height: 160,
     display: 'flex',
     flexDirection: 'column',
     alignItems: 'center',
@@ -150,12 +150,33 @@ export const styles = StyleSheet.create({
 
   gastouLabel: {
     color: 'white',
-    fontSize: 25,
+    fontSize: 20,
   },
 
   gastou: {
     color: 'white',
     fontSize: 40,
+  },
+
+  analiseContainer: {
+    width: '100%',
+    height: 120,
+    display: 'flex',
+    flexDirection: 'column',
+    alignItems: 'center',
+    gap: 20,
+    justifyContent: 'center',
+  },
+
+  analiseLabel: {
+    color: 'white',
+    fontSize: 30,
+  },
+  
+  analiseArrow: {
+    width: 20,
+    height: 20,
+    transform: 'rotate(90deg)',
   }
 
   
