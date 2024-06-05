@@ -31,7 +31,7 @@ export const styles = StyleSheet.create({
     width: '100%',
     height: 180,
     backgroundColor: lightGreen,
-    paddingTop: 40,
+    paddingTop: 30,
   },
 
   topContentIcons: {
@@ -41,18 +41,7 @@ export const styles = StyleSheet.create({
     alignItems: 'center',
     flexDirection: 'row',
     paddingHorizontal: 30,
-  },
-
-  menu: {
-    width: 30,
-    height: 30,
-    resizeMode: 'cover',
-  },
-
-  profile: {
-    width: 33,
-    height: 33,
-    resizeMode: 'cover',
+    paddingTop: 12,
   },
 
   gastoText: {
@@ -63,7 +52,7 @@ export const styles = StyleSheet.create({
     flexDirection: 'row',
     alignItems: 'center',
     paddingLeft: 30,
-    marginTop: 12,
+    marginTop: 10,
   },
 
   gastoContainer: {

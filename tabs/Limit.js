@@ -1,7 +1,12 @@
 import { StatusBar } from 'expo-status-bar';
 import React from 'react';
 import { Text, View, Image, TouchableOpacity, ImageBackground, ScrollView } from 'react-native';
-import { styles } from './styles/limitStyle';
+import { styles } from '../styles/limitStyle';
+
+import { AntDesign } from '@expo/vector-icons';
+import { MaterialIcons } from '@expo/vector-icons';
+import { FontAwesome5 } from '@expo/vector-icons';
+
 
 export default function MenuScreen({ navigation }) {
   const homePress = () => {
@@ -25,19 +30,17 @@ export default function MenuScreen({ navigation }) {
       <ScrollView contentContainerStyle={styles.scrollViewContent}>
 
         <View style={styles.header}>
-          <View style={styles.topContentIcons}>
-            <TouchableOpacity onPress={homePress}>
-              <ImageBackground source={require('./assets/arrow.png')} style={styles.voltar}></ImageBackground>
-            </TouchableOpacity>
-            <TouchableOpacity onPress={handlePress}>
-              <ImageBackground source={require('./assets/profile.png')} style={styles.profile}></ImageBackground>
-            </TouchableOpacity>
-          </View>
+        <View style={styles.topContentIcons}>
+                <TouchableOpacity onPress={homePress}>
+                <AntDesign name="left" size={25} color="white" />
+                </TouchableOpacity>
+                <MaterialIcons name="account-circle" size={35} color="white" />
+            </View>
 
           <TouchableOpacity onPress={editPress}>
             <View style={styles.limitTextContainer}>
               <Text style={styles.limitText}>Seu Limite</Text>
-              <ImageBackground source={require('./assets/pen.png')} style={styles.edit}></ImageBackground>
+              <FontAwesome5 name="pen" size={15} color="white" />
             </View>
           </TouchableOpacity>
 
@@ -59,7 +62,7 @@ export default function MenuScreen({ navigation }) {
             <TouchableOpacity onPress={handlePress}>
               <View style={styles.analiseContainer}>
                 <Text style={styles.analiseLabel}>Análise</Text>
-                <ImageBackground source={require('./assets/arrow.png')} style={styles.analiseArrow}></ImageBackground>
+                <ImageBackground source={require('../assets/arrow.png')} style={styles.analiseArrow}></ImageBackground>
               </View>
             </TouchableOpacity>
           </View>

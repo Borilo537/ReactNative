@@ -15,24 +15,12 @@ export const styles = StyleSheet.create({
 
   topContainer: {
     width: '100%',
-    height: 110,
     display: 'flex',
-    alignItems: 'flex-end',
+    alignItems: 'center',
     flexDirection: 'row',
     justifyContent: 'space-between',
-    padding: 10,
+    paddingTop: 42,
     paddingHorizontal: 30,
-  },
-
-  voltar: {
-    transform: 'rotate(180deg)',
-    width: 30,
-    height: 30
-  },
-
-  profile: {
-    width: 33,
-    height: 33
   },
 
   main: {
@@ -43,21 +31,14 @@ export const styles = StyleSheet.create({
 
   menuText: {
     backgroundColor: darkerGreen,
-    padding: 20,
+    padding: 15,
     paddingLeft: 30,
     color: 'white',
-    fontSize: 25,
+    fontSize: 20,
     borderTopWidth: 2,
     borderBottomWidth: 2,
     borderColor: normalGreen
   },
-
-  line: {
-    backgroundColor: normalGreen,
-    width: '100%',
-    height: 2,
-  },
-
 
 
 

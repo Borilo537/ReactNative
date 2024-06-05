@@ -1,7 +1,7 @@
 import { StatusBar } from 'expo-status-bar';
 import React from 'react';
 import { Text, View, Image, TouchableOpacity, ImageBackground, ScrollView, TextInput } from 'react-native';
-import { styles } from './styles/loginStyle.js';
+import { styles } from '../styles/loginStyle.js';
 
 export default function MenuScreen({ navigation }) {
 
@@ -33,7 +33,7 @@ export default function MenuScreen({ navigation }) {
 
         <View style={styles.header}>
           <View style={styles.logoContainer}>
-            <ImageBackground source={require('./assets/logo3.png')} style={styles.logo}></ImageBackground>
+            <ImageBackground source={require('../assets/logo3.png')} style={styles.logo}></ImageBackground>
           </View>
           <Text style={styles.loginTitle}>Entre no CashStash</Text>
           <Text style={styles.loginText}>Tenha controle sobre seu dinheiro</Text>

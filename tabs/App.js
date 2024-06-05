@@ -1,10 +1,16 @@
 import { StatusBar } from 'expo-status-bar';
 import React from 'react';
 import { Text, View, Image, TouchableOpacity, ImageBackground, ScrollView } from 'react-native';
-import { styles } from './styles/appStyle';
+import { styles } from '../styles/appStyle';
 
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
+
+import { MaterialCommunityIcons } from '@expo/vector-icons';
+import { Entypo } from '@expo/vector-icons';
+import { Ionicons } from '@expo/vector-icons';
+
+
 
 import Login from './Login';
 import Register from './Register';
@@ -67,10 +73,10 @@ function HomeScreen({ navigation }) {
         <View style={styles.header}>
           <View style={styles.topContentIcons}>
             <TouchableOpacity onPress={menuPress}>
-              <ImageBackground source={require('./assets/menu.png')} style={styles.menu}></ImageBackground>
+              <Entypo name="menu" size={35} color="white" />
             </TouchableOpacity>
             <TouchableOpacity onPress={loginPress}>
-              <ImageBackground source={require('./assets/profile.png')} style={styles.profile}></ImageBackground>
+              <MaterialCommunityIcons name="account-circle" size={35} color="white" />
             </TouchableOpacity>
           </View>
 
@@ -81,7 +87,7 @@ function HomeScreen({ navigation }) {
               <Text style={styles.gastoNum}>R$ 0,00</Text>
             </TouchableOpacity>
             <TouchableOpacity onPress={handlePress}>
-              <ImageBackground source={require('./assets/add.png')} style={styles.gastoAdd}></ImageBackground>
+            <Ionicons name="add-circle-outline" size={45} color="white" />
             </TouchableOpacity>
           </View>
         </View>
@@ -92,7 +98,7 @@ function HomeScreen({ navigation }) {
           <TouchableOpacity onPress={handlePress}>
             <View style={styles.analiseContainer}>
               <Text style={styles.analiseText}>Ver Análise</Text>
-              <ImageBackground source={require('./assets/analise.png')} style={styles.analiseImage}></ImageBackground>
+              <ImageBackground source={require('../assets/analise.png')} style={styles.analiseImage}></ImageBackground>
             </View>
           </TouchableOpacity>
 
@@ -104,7 +110,7 @@ function HomeScreen({ navigation }) {
           <TouchableOpacity onPress={handlePress}>
             <View style={styles.metasContainer}>
               <Text style={styles.metasText}>Suas Metas</Text>
-              <ImageBackground source={require('./assets/arrow.png')} style={styles.arrow}></ImageBackground>
+              <Entypo name="chevron-right" size={30} color="white" />
             </View>
           </TouchableOpacity>
 
@@ -144,7 +150,7 @@ function HomeScreen({ navigation }) {
           <TouchableOpacity onPress={handlePress}>
             <View style={styles.calendarioContainer}>
               <Text style={styles.calendarioText}>Calendário</Text>
-              <ImageBackground source={require('./assets/arrow.png')} style={styles.arrow}></ImageBackground>
+              <Entypo name="chevron-right" size={30} color="white" />
             </View>
           </TouchableOpacity>
 

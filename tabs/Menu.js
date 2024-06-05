@@ -1,6 +1,9 @@
 import React from 'react';
 import { Text, View, ImageBackground, TouchableOpacity } from 'react-native';
-import { styles } from './styles/menuStyle';
+import { styles } from '../styles/menuStyle';
+
+import { AntDesign } from '@expo/vector-icons';
+import { MaterialIcons } from '@expo/vector-icons';
 
 export default function MenuScreen({ navigation }) {
     const homePress = () => {
@@ -11,9 +14,9 @@ export default function MenuScreen({ navigation }) {
         <View style={styles.body}>
             <View style={styles.topContainer}>
                 <TouchableOpacity onPress={homePress}>
-                    <ImageBackground source={require('./assets/arrow.png')} style={styles.voltar}></ImageBackground>
+                <AntDesign name="left" size={25} color="white" />
                 </TouchableOpacity>
-                <ImageBackground source={require('./assets/profile.png')} style={styles.profile}></ImageBackground>
+                <MaterialIcons name="account-circle" size={35} color="white" />
             </View>
             <View style={styles.main}>
                 <Text style={styles.menuText}>Limite de gastos</Text>
