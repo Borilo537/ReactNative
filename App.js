@@ -19,13 +19,13 @@ const Stack = createStackNavigator();
 export default function Home() {
   return (
     <NavigationContainer>
-      <Stack.Navigator initialRouteName="Register">
-        <Stack.Screen name="Login" component={Login} options={{ headerShown: false }} />
-        <Stack.Screen name="Register" component={Register} options={{ headerShown: false }} />
+      <Stack.Navigator initialRouteName="Home">
         <Stack.Screen name="Home" component={HomeScreen} options={{ headerShown: false }} />
         <Stack.Screen name="Menu" component={Menu} options={{ headerShown: false }} />
         <Stack.Screen name="Limit" component={Limit} options={{ headerShown: false }} />
         <Stack.Screen name="EditLimit" component={EditLimit} options={{ headerShown: false }} />
+        <Stack.Screen name="Login" component={Login} options={{ headerShown: false }} />
+        <Stack.Screen name="Register" component={Register} options={{ headerShown: false }} />
       </Stack.Navigator>
     </NavigationContainer>
   );
@@ -37,6 +37,10 @@ function HomeScreen({ navigation }) {
 
   const registerPress = () => {
     navigation.navigate('Register');
+  };
+
+  const loginPress = () => {
+    navigation.navigate('Login');
   };
 
   const menuPress = () => {
@@ -65,7 +69,7 @@ function HomeScreen({ navigation }) {
             <TouchableOpacity onPress={menuPress}>
               <ImageBackground source={require('./assets/menu.png')} style={styles.menu}></ImageBackground>
             </TouchableOpacity>
-            <TouchableOpacity onPress={registerPress}>
+            <TouchableOpacity onPress={loginPress}>
               <ImageBackground source={require('./assets/profile.png')} style={styles.profile}></ImageBackground>
             </TouchableOpacity>
           </View>

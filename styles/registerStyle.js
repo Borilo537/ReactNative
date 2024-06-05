@@ -114,7 +114,6 @@ export const styles = StyleSheet.create({
 
 
   changeLogin: {
-
     color: 'white',
     textDecorationLine: 'underline',
     fontSize: 18,

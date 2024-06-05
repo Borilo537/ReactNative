@@ -9,40 +9,30 @@ const darkGreen = '#11170F';
 export const styles = StyleSheet.create({
 
 
-  statusBG: {
-    zIndex: 1,
-    backgroundColor: darkGreen,
-    position: 'absolute',
-    width: '100%',
-    height: 32,
-    top: 0,
-  },
-
   body: {
+    backgroundColor: 'red',
     flex: 1,
     backgroundColor: darkGreen,
   },
 
-  scrollViewContent: {
-    flexGrow: 1,
-    paddingBottom: 220,
-  },
 
   header: {
     display: 'flex',
     flexDirection: 'column',
     alignItems: 'center',
     width: '100%',
-    height: 280,
     backgroundColor: darkGreen,
-    paddingTop: 80,
+    paddingTop: 60,
   },
 
   logoContainer: {
+    textShadowColor: lightGreen,
+    textShadowRadius: 20,
+    textShadowOffset: 20,
     width: 110,
     height: 110,
     borderRadius: 20,
-    marginBottom: 30,
+    marginBottom: 15,
     overflow: 'hidden',
   },
 
@@ -53,21 +43,21 @@ export const styles = StyleSheet.create({
 
   loginTitle: {
     fontSize: 25,
-    fontWeight: 600,
+    fontWeight: '600',
     color: 'white',
   },
 
   loginText: {
     opacity: 0.6,
-    fontSize: 20,
-    fontWeight: 300,
+    fontSize: 18,
+    fontWeight: '300',
     color: 'white',
   },
 
   form: {
-    paddingHorizontal: 35,
+    paddingHorizontal: 30,
     paddingVertical: 40,
-    gap: 20,
+    gap: 25,
     display: 'flex',
     alignItems: 'center',
     flexDirection: 'column',  
@@ -75,7 +65,7 @@ export const styles = StyleSheet.create({
   },
 
   input: {
-    gap: 15,
+    gap: 10,
     width: '100%',
   },
 
@@ -88,7 +78,7 @@ export const styles = StyleSheet.create({
   inputControl: {
     backgroundColor: normalGreen,
     color: 'white',
-    padding: 10,
+    padding: 9,
     paddingLeft: 15,
     borderRadius: 10,
     fontSize: 15,
@@ -108,9 +98,27 @@ export const styles = StyleSheet.create({
 
   btnText: {
     fontSize: 20,
-    fontWeight: 500,
+    fontWeight: '500',
     color: 'white',
+  },
+
+  
+  changeLogin: {
+    color: 'white',
+    textDecorationLine: 'underline',
+    fontSize: 18,
+    marginTop: 10,
+    padding: 10,
+  },
+
+
+  passwordForget: {
+    color: 'white',
+    textDecorationLine: 'underline',
+    fontSize: 14,
+    marginLeft: 10,
   }
+
 
 
 
