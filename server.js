@@ -1,46 +1,41 @@
-const mysql = require('mysql2');
-// create a new MySQL connection
-const connection = mysql.createConnection({
+const express = require('express');
+const bodyParser = require('body-parser');
+const mysql = require('mysql');
+const cors = require('cors');
+
+const app = express();
+const port = 3306; // Porta para o servidor Node.js
+
+app.use(bodyParser.json());
+app.use(cors());
+
+// Configurar a conexão com o banco de dados
+const db = mysql.createConnection({
   host: 'localhost',
   user: 'root',
-//   password: 'YES',
-  database: 'cashstashdb'
-});
-// connect to the MySQL database
-connection.connect((error)=>{
-if(error){
-console.error('Error connecting to MySQL database:', error);
-}else{
-console.log('Connected to MySQL database!');
-}
+  password: 'root',
+  database: 'cashstashDB'
 });
 
-// var conect = connection.execute('INSERT INTO user_account(name, email, password) VALUES ("vitor", "vito423r@gmail.com", "vitor123")')
-// connection.commit()
-// console.log(conect)
-// var exec = connection.execute('SELECT * FROM user_account;')
-// console.log(exec)
-// close the MySQL connection
-// connection.end();
-// connection.execute('SELECT * FROM user_account;')
-//     .then(result => {
-//         console.log(result[0])
-//         connection.end()
-//     })
-//     .catch(err => {
-//         console.log(err);
-//     })
+db.connect((err) => {
+  if (err) {
+    throw err;
+  }
+  console.log('Conectado ao banco de dados MySQL');
+});
 
-// async function executar(){
-//     const a = connection.execute('SELECT * FROM user_account;')
-//     connection.commit()
-//     console.log(JSON.stringify(a))
-//     connection.end()
-// }
-
-// executar()
-connection.get("/consulta", function (req, res) {
-    var exec = connection.execute('SELECT * FROM user_account;')
-    res.send(exec);
+// Rota para adicionar dados
+app.post('/register', (req, res) => {
+  const { nome, email, senha } = req.body;
+  const sql = 'INSERT INTO usuarios (nome, email, senha) VALUES (?, ?, ?)';
+  db.query(sql, [nome, email, senha], (err, result) => {
+    if (err) {
+      return res.status(500).send('Erro ao adicionar usuário');
+    }
+    res.send('Usuário adicionado com sucesso!');
   });
-  
+});
+
+app.listen(port, () => {
+  console.log(`Servidor rodando na porta ${port}`);
+});

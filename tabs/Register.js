@@ -1,23 +1,41 @@
-import { StatusBar } from 'expo-status-bar';
-import React from 'react';
+import React, { useState } from 'react';
 import { Text, View, Image, TouchableOpacity, ImageBackground, ScrollView, TextInput } from 'react-native';
+import { StatusBar } from 'expo-status-bar';
 import { styles } from '../styles/loginStyle.js';
+import axios from 'axios';
 
 export default function MenuScreen({ navigation }) {
+  const [nome, setNome] = useState('');
+  const [email, setEmail] = useState('');
+  const [senha, setSenha] = useState('');
+  const [confirmarSenha, setConfirmarSenha] = useState('');
 
   const loginPress = () => {
     navigation.navigate('Login');
   };
 
+  const handleRegister = () => {
+    if (senha !== confirmarSenha) {
+      alert('As senhas não coincidem');
+      return;
+    }
 
-  const handlePress = () => {
-    Linking.openURL('https://exemplo.com');
+    axios.post('http://localhost:3000/register', {
+      nome,
+      email,
+      senha,
+    })
+    .then(response => {
+      alert(response.data);
+    })
+    .catch(error => {
+      console.error(error);
+      alert('Erro ao registrar');
+    });
   };
 
   return (
-
     <View style={styles.body}>
-
       <View style={{
         zIndex: 1,
         backgroundColor: '#11170F',
@@ -30,7 +48,6 @@ export default function MenuScreen({ navigation }) {
       <ScrollView contentContainerStyle={{
         flexGrow: 1,
       }}>
-
         <View style={styles.header}>
           <View style={styles.logoContainer}>
             <ImageBackground source={require('../assets/logo3.png')} style={styles.logo}></ImageBackground>
@@ -42,38 +59,52 @@ export default function MenuScreen({ navigation }) {
         <View style={styles.form}>
           <View style={styles.input}>
             <Text style={styles.inputLabel}>Nome</Text>
-
-            <TextInput style={styles.inputControl} placeholder='Seu Nome' placeholderTextColor={'white'}>
-            </TextInput>
-
+            <TextInput
+              style={styles.inputControl}
+              placeholder='Seu Nome'
+              placeholderTextColor={'white'}
+              value={nome}
+              onChangeText={setNome}
+            />
           </View>
 
           <View style={styles.input}>
             <Text style={styles.inputLabel}>Email</Text>
-
-            <TextInput style={styles.inputControl} placeholder='Digite seu e-mail' placeholderTextColor={'white'}>
-            </TextInput>
-
+            <TextInput
+              style={styles.inputControl}
+              placeholder='Digite seu e-mail'
+              placeholderTextColor={'white'}
+              value={email}
+              onChangeText={setEmail}
+            />
           </View>
 
           <View style={styles.input}>
             <Text style={styles.inputLabel}>Senha</Text>
-
-            <TextInput style={styles.inputControl} placeholder='Crie sua senha' placeholderTextColor={'white'}>
-            </TextInput>
-
+            <TextInput
+              style={styles.inputControl}
+              placeholder='Crie sua senha'
+              placeholderTextColor={'white'}
+              secureTextEntry
+              value={senha}
+              onChangeText={setSenha}
+            />
           </View>
 
           <View style={styles.input}>
             <Text style={styles.inputLabel}>Confirmar Senha</Text>
-
-            <TextInput style={styles.inputControl} placeholder='Confirme sua senha' placeholderTextColor={'white'}>
-            </TextInput>
-
+            <TextInput
+              style={styles.inputControl}
+              placeholder='Confirme sua senha'
+              placeholderTextColor={'white'}
+              secureTextEntry
+              value={confirmarSenha}
+              onChangeText={setConfirmarSenha}
+            />
           </View>
 
           <View style={styles.formAction}>
-            <TouchableOpacity>
+            <TouchableOpacity onPress={handleRegister}>
               <View style={styles.btn}>
                 <Text style={styles.btnText}>Criar Conta</Text>
               </View>
@@ -85,15 +116,8 @@ export default function MenuScreen({ navigation }) {
           </TouchableOpacity>
         </View>
 
-
-
-
-
         <StatusBar style="light" />
-
-
       </ScrollView>
     </View>
-
   );
 }

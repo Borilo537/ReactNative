@@ -1,7 +1,7 @@
 import { StatusBar } from 'expo-status-bar';
 import React from 'react';
 import { Text, View, Image, TouchableOpacity, ImageBackground, ScrollView } from 'react-native';
-import { styles } from '../styles/appStyle';
+import { styles } from './styles/appStyle';
 
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
@@ -12,11 +12,11 @@ import { Ionicons } from '@expo/vector-icons';
 
 
 
-import Login from './Login';
-import Register from './Register';
-import Menu from './Menu';
-import Limit from './Limit';
-import EditLimit from './EditLimit';
+import Login from './tabs/Login';
+import Register from './tabs/Register';
+import Menu from './tabs/Menu';
+import Limit from './tabs/Limit';
+import EditLimit from './tabs/EditLimit';
 
 
 const Stack = createStackNavigator();
@@ -98,7 +98,7 @@ function HomeScreen({ navigation }) {
           <TouchableOpacity onPress={handlePress}>
             <View style={styles.analiseContainer}>
               <Text style={styles.analiseText}>Ver Análise</Text>
-              <ImageBackground source={require('../assets/analise.png')} style={styles.analiseImage}></ImageBackground>
+              <ImageBackground source={require('./assets/analise.png')} style={styles.analiseImage}></ImageBackground>
             </View>
           </TouchableOpacity>
 
